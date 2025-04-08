@@ -20,9 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import api.inova.digital.model.Pedido;
 import api.inova.digital.repository.PedidoRepository;
-import api.inova.digital.upload.FileUpload;
-import api.inova.digital.upload.FileUploadUrl;
-import api.inova.digital.upload.FireBaseStorageService;
+
 
 @RestController
 @RequestMapping("/inovadigital")
@@ -31,8 +29,7 @@ public class PedidoResource {
 	@Autowired
 	private PedidoRepository pedidoRepository;
 	
-	@Autowired
-	private FireBaseStorageService firebase;
+
 	
 	@GetMapping("/pedidos")
 	public List<Pedido> getPedidos(){
