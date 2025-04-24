@@ -29,6 +29,8 @@ public class Pedido {
 	private String descricaoPedido;
 	private String quantidadePedido;
 	private String entregaPedido;
+	private String status;
+
 
 
 
@@ -105,5 +107,12 @@ public class Pedido {
 				", entregaPedido='" + entregaPedido + '\'' +
 				", valorPedido='" + valorPedido + '\'' +
 				'}';
+	}
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 }
