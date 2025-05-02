@@ -1,5 +1,7 @@
 package api.inova.digital.model;
 
+import api.inova.digital.enums.StatusPedido;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -16,9 +18,9 @@ public class DetalhesPedidoDTO {
     @Size(min = 3, max = 100, message = "O nome deve conter pelo menos 3 caracteres e no máximo 100 caracteres.")
     private String nomeCliente;
 
-    private String status;
-
     private String entregaPedido;
+
+    private StatusPedido statusPedido;
 
     // Getters e setters
 
@@ -38,12 +40,13 @@ public class DetalhesPedidoDTO {
         this.nomeCliente = nomeCliente;
     }
 
-    public String getStatus() {
-        return status;
+    @Enumerated(EnumType.STRING)
+    public StatusPedido getStatusPedido() {
+        return statusPedido;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setStatusPedido(StatusPedido statusPedido) {
+        this.statusPedido = statusPedido;
     }
 
     public String getEntregaPedido() {

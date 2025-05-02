@@ -36,4 +36,6 @@ public class DetalhesPedidoDTOResource {
         return resultado.map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
+
+
 }

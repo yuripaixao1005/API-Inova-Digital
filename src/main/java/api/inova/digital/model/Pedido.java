@@ -1,15 +1,12 @@
 package api.inova.digital.model;
 
+import api.inova.digital.enums.StatusPedido;
+
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -29,14 +26,9 @@ public class Pedido {
 	private String descricaoPedido;
 	private String quantidadePedido;
 	private String entregaPedido;
-	private String status;
-
-
-
-
+	private StatusPedido status;
 	private String valorPedido;
-	
-
+	private LocalDate prazoEntrega;
 
 	public Long getCodigo() {
 		return codigo;
@@ -77,8 +69,6 @@ public class Pedido {
 	public void setQuantidadePedido(String quantidadePedido) {
 		this.quantidadePedido = quantidadePedido;
 	}
-	
-
 
 	public String getEntregaPedido() {
 		return entregaPedido;
@@ -88,12 +78,29 @@ public class Pedido {
 		this.entregaPedido = entregaPedido;
 	}
 
+	@Enumerated(EnumType.STRING)
+	public StatusPedido getStatus() {
+		return status;
+	}
+
+	public void setStatus(StatusPedido status) {
+		this.status = status;
+	}
+
 	public String getValorPedido() {
 		return valorPedido;
 	}
 
 	public void setValorPedido(String valorPedido) {
 		this.valorPedido = valorPedido;
+	}
+
+	public LocalDate getPrazoEntrega() {
+		return prazoEntrega;
+	}
+
+	public void setPrazoEntrega(LocalDate prazoEntrega) {
+		this.prazoEntrega = prazoEntrega;
 	}
 
 	@Override
@@ -108,11 +115,8 @@ public class Pedido {
 				", valorPedido='" + valorPedido + '\'' +
 				'}';
 	}
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
+	public Pedido(LocalDate prazoEntrega, Long codigo) {
+		this.prazoEntrega = prazoEntrega;
+		this.codigo = codigo;
 	}
 }
