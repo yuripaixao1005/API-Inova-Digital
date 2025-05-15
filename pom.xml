@@ -9,10 +9,10 @@
 		<version>2.2.4.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.senai.sp.jandira</groupId>
-	<artifactId>odonto</artifactId>
+	<groupId>api.inova.digital</groupId>
+	<artifactId>inovaDigital</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>odonto</name>
+	<name>inovaDigital</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

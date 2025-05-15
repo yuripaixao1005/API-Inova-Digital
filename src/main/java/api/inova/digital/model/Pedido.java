@@ -19,7 +19,7 @@ public class Pedido {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long codigo;
+		private Long codigo;
 
 	@NotNull
 	@Size(min = 3, max = 100, message = "O nome deve conter pelo menos 3 caracteres e no máximo 100 caracteres.")
@@ -29,12 +29,16 @@ public class Pedido {
 	private String descricaoPedido;
 	private String quantidadePedido;
 	private String entregaPedido;
-
-
-
 	private String valorPedido;
-	
+	private String statusPedido;
 
+	public String getStatusPedido() {
+		return statusPedido;
+	}
+
+	public void setStatusPedido(String statusPedido) {
+		this.statusPedido = statusPedido;
+	}
 
 	public Long getCodigo() {
 		return codigo;
